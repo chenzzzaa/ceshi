@@ -1,0 +1,51 @@
+<!--
+ * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
+ * @Date: 2024-03-16 18:22:06
+ * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
+ * @LastEditTime: 2024-03-18 18:04:24
+ * @FilePath: \练习\递归函数.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const digui = function(num){
+           if (num === 0)
+           {
+               return 1;}
+               else
+               {
+                   return num * digui(num-1);
+               }
+        }
+        digui(3);
+        console.log(digui(3));
+        // 随机数游戏  生成1-10的随机数存入变量
+         let suiji = Math.floor(Math.random() * 10 + 1)
+            console.log(suiji)
+      while(true){
+       
+       
+        let shu = +prompt("请输入一个数字")
+        console.log(shu )
+        if(shu>suiji){
+            alert("你的数大了")
+        }
+        if (shu < suiji) {
+                alert("你的数小了")
+            }
+        if (shu === suiji) {
+                    alert("你的数对了")
+                    break
+                }
+                
+            }
+    </script>
+</body>
+</html>

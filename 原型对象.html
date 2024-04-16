@@ -1,9 +1,9 @@
 <!--
- * @Author: chenzzzaa 1085502677@qq.com
- * @Date: 2024-04-15 00:29:21
- * @LastEditors: chenzzzaa 1085502677@qq.com
- * @LastEditTime: 2024-04-16 00:43:28
- * @FilePath: \lianxi\原型对象.html
+ * @Author: chenzzzaa 101276331+chenzzzaa@users.noreply.github.com
+ * @Date: 2024-04-14 17:39:04
+ * @LastEditors: chenzzzaa 101276331+chenzzzaa@users.noreply.github.com
+ * @LastEditTime: 2024-04-15 16:25:46
+ * @FilePath: \练习\原型对象.html
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <!DOCTYPE html>
@@ -17,16 +17,30 @@
 
 <body>
     <script>
-        function Person(name){
+
+        const Anm = function (name, age) {
             this.name = name
+            this.age = age
         }
-        Person.prototype.speak=function(){
-            console.log("shuo")
+        Anm.prototype.spk = function () {
+            console.log(jiao)
         }
-        const nan= new Person("chen")
-        console.log(nan.name)
-        console.log(nan.speak())
-        console.log(Person.prototype)
+
+
+        let animal = {
+            eats: true
+        }
+        // Anm.prototype = animal
+// 构造函数的prototype属性可以被赋值，以此用此构造函数创建的对象就可以访问赋值者的属性，方法
+// 构造函数创建的实例对象的__proto__也可以被赋值，意味着实例对象继承了赋值者的属性，方法
+        const gou = new Anm("cat", 12)
+        gou.__proto__ = animal
+        console.log(gou.__proto__)
+        console.log(Anm.prototype)
+        console.log(gou)
+        alert(gou.eats)
+        // 构造函数的方法一般写在原型对象上，方便共享
+        // __proto__每个 JavaScript 对象都有一个隐式的 __proto__ 属性 ，这个属性指向了创建该对象时使用的构造函数的原型对象。
     </script>
 </body>
 

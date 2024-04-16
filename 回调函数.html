@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 回调函数是作为参数传递给另一个函数的函数，常用来执行异步操作，比如等3秒后再执行回调函数 -->
+    <script>
+        // setTimeout( function() {console.log(22222)} , 3000)
+        // console.log(33333)
+        // const cs = () => console.log(333333)
+
+
+        // setTimeout(cs, 3000)
+
+        // 模拟一个异步操作，接受一个回调函数作为参数
+        function asyncOperation(callback) {
+            // 模拟异步操作，这里假设操作出现错误
+            const error = true;
+
+            if (error) {
+                // 如果出现错误，调用回调函数并传递错误信息
+                callback("Error occurred", null);
+            } else {
+                // 操作成功时，调用回调函数并传递结果
+                callback(null, "Operation successful");
+            }
+        }
+
+        // 定义一个回调函数来处理异步操作的结果和错误
+        function handleResult(error, result) {
+            if (error) {
+                console.log("Error: " + error);
+            } else {
+                console.log("Result: " + result);
+            }
+        }
+
+        // 调用异步操作，并传入回调函数
+        asyncOperation(handleResult);
+
+function hui(){
+    setTimeout(function () { console.log(22222) },2000)
+}
+ function diao(n){
+    console.log(1111)
+   n()
+ }
+ diao(hui)
+    </script>
+</body>
+
+</html>
